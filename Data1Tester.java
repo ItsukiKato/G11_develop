@@ -15,10 +15,10 @@ public class Data1Tester {
 
         for (int i = 0; i < number_of_task; i++) {
             System.out.print(i + 1 + "番目の課題名:");
-            String name = stdIn.nextLine();
+            String name = stdIn.next();
 
             System.out.print(i + 1 + "番目の締切日:");
-            String end_date = stdIn.nextLine();
+            String end_date = stdIn.next();
 
             data[i] = new Data1(name, end_date);
         }
