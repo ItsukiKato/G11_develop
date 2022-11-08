@@ -26,6 +26,7 @@ public class Data1Tester {
          */
 
         GregorianCalendar gcalendar = new GregorianCalendar();
+
         int current_day2 = gcalendar.get(Calendar.DAY_OF_YEAR);
 
         // 確認
@@ -76,5 +77,38 @@ public class Data1Tester {
             System.out.println(i + 1 + "番目の課題の重み = " + data[i].getWeight());
         }
 
+        // 重みのみを持つ配列を用意して初期化する。
+        int[] weight_only = new int[number_of_task];
+
+        // 重みを格納していく
+        for (int i = 0; i < number_of_task; i++) {
+            weight_only[i] = data[i].getWeight();
+        }
+
+        // ソート確認の出力構文
+        System.out.println("ソート前");
+        QuickSort.print_data(weight_only);
+
+        System.out.println("ソート後");
+        QuickSort.quick_sort(weight_only, 0, number_of_task - 1);
+        QuickSort.print_data(weight_only);
+
+        // ソート後の名前を格納するString型の配列
+        String[] after_sort_taskname = new String[number_of_task];
+
+        // 重みのみの配列と、クラス型のデータを照合させて、一致したらafter_sort_tasknameに格納させていく。
+        // 現段階では、重みが等しい課題があった場合に出力の名前が1つに重複して出力されてしまう。
+        // プロトタイプでは重複しないように入力、重みつけの厳密さで重みの重複は回避できるかも
+        for (int i = 0; i < number_of_task; i++) {
+            for (int j = 0; j < number_of_task; j++) {
+                if (weight_only[i] == data[j].getWeight())
+                    after_sort_taskname[i] = data[j].getName();
+            }
+        }
+
+        // 出力して確認
+        for (int i = 0; i < number_of_task; i++) {
+            System.out.println("重み順にソートした後の課題名(現段階では昇順): " + after_sort_taskname[i] + " 重み = " + weight_only[i]);
+        }
     }
 }
