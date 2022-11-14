@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="css/style.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
+
 <html>
-タグ
-<div class="form-group">
+<div class="task-name">
     <label for="text">タスク名入力:</label>
-    <input type="text" id="text" class="form-control">
+    <input type="text" size="15" value="タスク名を入力してください。">
 </div>
 
-<form>
-    <lavel for="text">タスクの種類</lavel>
+<div class="task-variety" <lavel for="text">タスクの種類</lavel>
     <select name="select1">
         <option>課題</option>
         <option>ゲーム</option>
@@ -20,7 +20,7 @@
         <option>買い物</option>
         <option>家事</option>
     </select>
-</form>
+</div>
 
 <div class="fallbackDatePicker">
     <div>
@@ -89,7 +89,11 @@
     </div>
 </div>
 
-<body>
+<div class="button">
+    <button type="" button">送信</button>
+</div>
+
+<div class="task-table">
     <lavel for="text">[タスク一覧]</lavel>
     <table border="1">
         <tr>
@@ -108,5 +112,4 @@
             <td>1</td>
         </tr>
     </table>
-</body>
-  
+</div>
