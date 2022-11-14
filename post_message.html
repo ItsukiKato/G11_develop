@@ -7,13 +7,14 @@
     crossorigin="anonymous"></script>
 
 <html xmlns:th="http:www.thymeleaf.org">
-  <form th:action="@{/confirm-message}" method="post">
+	<meta charset = "UTF-8">
+  <form th:action="@{/confirm_message}" method="post">
 <div class="task-name">
     <label for="text">タスク名入力:</label>
-    <input type="text" size="15" value="タスク名を入力してください。">
+    <input type="text" size="15" name = "mess">
 </div>
 
-<div class="task-variety" <lavel for="text">タスクの種類</lavel>
+<div class="task-variety"> <lavel for="text">タスクの種類</lavel>
     <select name="select1">
         <option>課題</option>
         <option>ゲーム</option>
@@ -90,9 +91,7 @@
     </div>
 </div>
 
-<div class="button">
-    <button type="" button">送信</button>
-</div>
+    <input type="submit"></input>
 
 
 </form>
