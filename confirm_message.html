@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+<html xmlns:th="http:www.thymeleaf.org">
+    
+<div class="task-table">
+    <lavel for="text">[タスク一覧]</lavel>
+    <table border="1">
+        <tr>
+            <th>課題名</th>
+            <th>締め切り日時</th>
+            <th>順位</th>
+        </tr>
+        <tr>
+            <p th:text="${message}"></p>
+            <td>2022/11/20</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>ゲーム</td>
+            <td>なし</td>
+            <td>1</td>
+        </tr>
+    </table>
+</div>
+</html>
