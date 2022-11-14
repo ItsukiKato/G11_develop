@@ -7,6 +7,7 @@
     crossorigin="anonymous"></script>
 
 <html xmlns:th="http:www.thymeleaf.org">
+	<meta charset = "UTF-8">
     
 <div class="task-table">
     <lavel for="text">[タスク一覧]</lavel>
@@ -14,10 +15,10 @@
         <tr>
             <th>課題名</th>
             <th>締め切り日時</th>
-            <th>順位</th>
+            <th>順位</th> [[${mess1}]]
         </tr>
         <tr>
-            <p th:text="${message}"></p>
+            <p th:text="${mess1}"></p>
             <td>2022/11/20</td>
             <td>2</td>
         </tr>
