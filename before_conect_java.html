@@ -6,7 +6,9 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
 
-<html>
+<html xmlns:th="http:www.thymeleaf.org">
+    <meta charset = "UTF-8">
+      <form th:action="@{/before_conect_java}" method="post">    
 <div class="text-center">
     <div class="container">
         <div class="row o-3column">
@@ -31,8 +33,10 @@
                         <option>その他</option>
                     </select>
 
-                    <input type="text" class="form-control" placeholder="タスク名"
-                        aria-label="Text input with segmented dropdown button">
+                    <input type="text" class="form-control" placeholder="タスク名" name="mess">
+                        
+                        <input type="text" class="form-control" placeholder="タスク数" name="num">
+                            
                 </div>
 
 
@@ -135,21 +139,14 @@
                 <p><br>追加されたタスク一覧</p>
 
                 <table border="1">
+                   <th:block th:each="link : ${sn.getLinks()}">
                     <tr>
-                        <th>課題名</th>
-                        <th>締め切り日時</th>
-                        <th>順位</th>
+                        <td>[[${link.getName()}]]</td>
+                        <td>[[${link.getYear()}]]</td>
+                        <td>[[${link.getMonth()}]]</td>
+                        <td>[[${link.getDay()}]]</td>
                     </tr>
-                    <tr>
-                        <td>中間レポート</td>
-                        <td>2022/11/20</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <td>ゲーム</td>
-                        <td>なし</td>
-                        <td>1</td>
-                    </tr>
+                    </th:block>
                 </table>
             </div>
 
@@ -188,5 +185,4 @@
         </div>
     </div>
 </div>
-
 </html>
