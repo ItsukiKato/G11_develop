@@ -28,8 +28,8 @@ public class HelloworldController {
     return "before_conect_java";
   }
 
-  @PostMapping("/before__conect_java")
-  private String confirmMessage(@RequestParam(name = "mess") String mess, @RequestParam(name = "year") String year, @RequestParam(name = "month") String month, @RequestParam(name = "day") String day, Model model){
+  @PostMapping(value = "/before_conect_java")
+  private String confirmMessage(@RequestParam(name = "mess")String mess, @RequestParam(name = "year")String year, @RequestParam(name = "month")String month, @RequestParam(name = "day")String day, Model model){
 	 //names.add(mess);
 	 int nyear = Integer.parseInt(year);
 	 //years.add(nyear);
@@ -67,6 +67,9 @@ public class HelloworldController {
     		 }
     	 }
      }
+     
+     Lists list = new Lists(names, years, months, days);
+     model.addAttribute("sn", list);
      
     //model.addAttribute("mess1", mess);
     return "before_conect_java";
