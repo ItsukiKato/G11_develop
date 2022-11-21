@@ -6,63 +6,50 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
 
+
 <html xmlns:th="http:www.thymeleaf.org">
-<meta charset="UTF-8">
+    <meta charset = "UTF-8">    
+<div class="text-center">
+    <div class="container">
+        <div class="row o-3column">
+            <div class="col-md-3">
 
-    <div class="text-center">
-        <div class="container">
-            <div class="row o-3column">
-                <div class="col-md-3">
+            </div>
 
-                </div>
+            <div class="col-md-6">
 
-                <div class="col-md-6">
+                <h1>タスクの重み付け定量化</h1>
 
-                    <h1>タスクの重み付け定量化</h1>
+                <p class="lead">
+                    タスクの種類と締め切り日時から取り組むべき順序を求めます。
+                </p>
 
-                    <p class="lead">
-                        タスクの種類と締め切り日時から取り組むべき順序を求めます。
-                    </p>
-
-                    <h5>タスクの種類と名前</h5>
-                    <div class="input-group mb-3">
-                        <form th:action="/before_conect_java" method="post">
-                        <select id="task" name="task">
-                            <option value="課題" selected>課題</option>
-                            <option value="家事">家事</option>
-                            <option value="運動">運動</option>
-                            <option value="その他">その他</option>
-                        </select>
-
-                        <input type="text" class="form-control" placeholder="タスク名" name="mess">
-
-                        <input type="text" class="form-control" placeholder="タスク数" name="num">
-                    </form>
-
-                    </div>
-
-
-
-                    <div>
-                        <h5>締め切り日時
-                            <p class="lead">
-                                (締め切りがない場合は2022/1/1を選択してください)
-                            </p>
-                        </h5>
-                        <span>
-                            <form th:action="/before_conect_java" method="post">
-                            <select id="year" name="year">
-                                <option value="2022" selected>2022</option>
+                <h5>タスクの種類と名前</h5>
+                
+					<form th:action="before_conect_java" method="post">
+					<div class="input-group mb-3">
+						<select id="task" name="task">
+                        <option value = "課題">課題</option>
+                        <option value = "家事">家事</option>
+                        <option value = "運動">運動</option>
+                        <option value = "その他">その他</option>
+                     </select>
+                     <input type="text" class="form-control" placeholder="タスク名" name="mess"></input>
+                     </div>
+                     <h5>締め切り日時
+                            (締め切りがない場合は2022/1/1を選択してください)
+                     </h5>
+                    <span>
+                        <select id="year" name="year">
+                            <option value="2022">2022</option>
                                 <option value="2023">2023</option>
                                 <option value="2024">2024</option>
-                            </select>
-                            <label for="year">年</label>
-                        </form>
-                        </span>
-                        <span>
-                            <form th:action="/before_conect_java" method="post">
-                            <select id="month" name="month">
-                                <option value="1" selected>1</option>
+                        </select>
+                        <label for="year">年</label>
+                    </span>
+                    <span>
+                        <select id="month" name="month">
+                                <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
@@ -75,12 +62,11 @@
                                 <option value="11">11</option>
                                 <option value="12">12</option>
                             </select>
-                            <label for="month">月</label>
-                        </span>
-                        <span>
-                            <form th:action="/before_conect_java" method="post">
-                            <select id="day" name="day">
-                                <option value="1" selected>1</option>
+                        <label for="month">月</label>
+                    </span>
+                    <span>
+                        <select id="day" name="day">
+                            <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
@@ -111,88 +97,75 @@
                                 <option value="29">29</option>
                                 <option value="30">30</option>
                                 <option value="31">31</option>
-                            </select>
-                            <label for="day">日</label>
-                        </form>
-                        </span>
-                    </div>
-
+                        </select>
+                        <label for="day">日</label>
+                    </span>
                     <p class="lead">
-                        <br>送信を押してタスクを追加
-                    </p>
+                    <br></br>送信を押してタスクを追加
+                </p>
 
-                    <input type="submit"></input>
+                <input type="submit"></input>
+					</form>
+           
 
-                </div>
+            </div>
 
-                <div class="col-md-3">
+            <div class="col-md-3">
 
-                </div>
+            </div>
 
+        </div>
+    </div>
+</div>
+
+
+
+<div class="text-center">
+    <div class="container">
+        <div class="row o-3column">
+            <div class="col-md-3">
+
+            </div>
+
+            <div class="col-md-3">
+                <br></br>追加されたタスク一覧
+
+                
+            </div>
+
+            <div class="col-md-3">
+                <br>ソートされたタスク一覧
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Task</th>
+                            <th scope="col">Date</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>task1</td>
+                            <td>2022/11/20</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>task2</td>
+                            <td>no</td>
+
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>期末レポート</td>
+                            <td>2022/11/30</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
-
-
-
-    <div class="text-center">
-        <div class="container">
-            <div class="row o-3column">
-                <div class="col-md-3">
-
-                </div>
-
-                <div class="col-md-3">
-                    <p><br>追加されたタスク一覧</p>
-
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Task</th>
-                                <th scope="col">Date</th>
-
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>task1</td>
-                                <td>2022/11/20</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>task2</td>
-                                <td>no</td>
-
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>期末レポート</td>
-                                <td>2022/11/30</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                </div>
-
-                <div class="col-md-3">
-                    <p><br>ソートされたタスク一覧</p>
-
-                    <table class="table">
-                        <table border="1">
-                            <th:block th:each="link : ${sn.getLinks()}">
-                                <tr>
-                                    <td>[[${link.getName()}]]</td>
-                                    <td>[[${link.getYear()}]]</td>
-                                    <td>[[${link.getMonth()}]]</td>
-                                    <td>[[${link.getDay()}]]</td>
-                                </tr>
-                            </th:block>
-                        </table>
-                </div>
-            </div>
-        </div>
-    </div>
-
+</div>
 </html>
