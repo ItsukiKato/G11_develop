@@ -1,3 +1,5 @@
+package com.example.demo;
+
 public class Data1 {
     private String name;
     private int end_day;
@@ -19,16 +21,16 @@ public class Data1 {
         return name;
     }
 
-    int getEndDay() {
-        return end_day;
+    String getEndDay() {
+        return Integer.valueOf(end_day).toString();
     }
 
-    int getEndMonth() {
-        return end_month;
+    String getEndMonth() {
+        return Integer.valueOf(end_month).toString();
     }
 
-    int getEndYear() {
-        return end_year;
+    String getEndYear() {
+        return Integer.valueOf(end_year).toString();
     }
 
     int getWeight() {
