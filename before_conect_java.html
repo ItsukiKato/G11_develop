@@ -6,7 +6,9 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
 
-<html>
+
+<html xmlns:th="http:www.thymeleaf.org">
+    <meta charset = "UTF-8">    
 <div class="text-center">
     <div class="container">
         <div class="row o-3column">
@@ -23,94 +25,98 @@
                 </p>
 
                 <h5>タスクの種類と名前</h5>
-                <div class="input-group mb-3">
-                    <select id="task" name="task">
-                        <option selected>課題</option>
-                        <option>家事</option>
-                        <option>運動</option>
-                        <option>その他</option>
-                    </select>
-
-                    <input type="text" class="form-control" placeholder="タスク名"
-                        aria-label="Text input with segmented dropdown button">
-                </div>
-
-
-
-                <div>
-                    <h5>締め切り日時
-                        <p class="lead">
+                
+					<form th:action="before_conect_java" method="post">
+					<div class="input-group mb-3">
+						<select id="task" name="task">
+                        <option value = "課題">課題</option>
+                        <option value = "家事">家事</option>
+                        <option value = "運動">運動</option>
+                        <option value = "その他">その他</option>
+                     </select>
+                     <input type="text" class="form-control" placeholder="タスク名" name="mess"></input>
+                     </div>
+                     <h5>締め切り日時
                             (締め切りがない場合は2022/1/1を選択してください)
-                        </p>
-                    </h5>
+                     </h5>
                     <span>
                         <select id="year" name="year">
-                            <option selected>2022</option>
-                            <option>2023</option>
-                            <option>2024</option>
+                            <option value="2022">2022</option>
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
                         </select>
                         <label for="year">年</label>
                     </span>
                     <span>
                         <select id="month" name="month">
-                            <option selected>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                            <option>7</option>
-                            <option>8</option>
-                            <option>9</option>
-                            <option>10</option>
-                            <option>11</option>
-                            <option>12</option>
-                        </select>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
                         <label for="month">月</label>
                     </span>
                     <span>
                         <select id="day" name="day">
-                            <option selected>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                            <option>7</option>
-                            <option>8</option>
-                            <option>9</option>
-                            <option>10</option>
-                            <option>11</option>
-                            <option>12</option>
-                            <option>13</option>
-                            <option>14</option>
-                            <option>15</option>
-                            <option>16</option>
-                            <option>17</option>
-                            <option>18</option>
-                            <option>19</option>
-                            <option>20</option>
-                            <option>21</option>
-                            <option>22</option>
-                            <option>23</option>
-                            <option>24</option>
-                            <option>25</option>
-                            <option>26</option>
-                            <option>27</option>
-                            <option>28</option>
-                            <option>29</option>
-                            <option>30</option>
-                            <option>31</option>
+                            <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
                         </select>
                         <label for="day">日</label>
                     </span>
-                </div>
-
-                <p class="lead">
-                    <br>送信を押してタスクを追加
+                    <p class="lead">
+                    <br></br>送信を押してタスクを追加
                 </p>
 
                 <input type="submit"></input>
+					</form>
+						
+
+                    
+                            
+                
+               		
+                    
+
+                
+	
+                    
 
             </div>
 
@@ -132,29 +138,22 @@
             </div>
 
             <div class="col-md-3">
-                <p><br>追加されたタスク一覧</p>
+                <br></br>追加されたタスク一覧
 
                 <table border="1">
+                   <th:block th:each="link : ${sn.getLinks()}">
                     <tr>
-                        <th>課題名</th>
-                        <th>締め切り日時</th>
-                        <th>順位</th>
+                        <td>[[${link.getName()}]]</td>
+                        <td>[[${link.getYear()}]]</td>
+                        <td>[[${link.getMonth()}]]</td>
+                        <td>[[${link.getDay()}]]</td>
                     </tr>
-                    <tr>
-                        <td>中間レポート</td>
-                        <td>2022/11/20</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <td>ゲーム</td>
-                        <td>なし</td>
-                        <td>1</td>
-                    </tr>
+                    </th:block>
                 </table>
             </div>
 
             <div class="col-md-3">
-                <p><br>ソートされたタスク一覧</p>
+                <br>ソートされたタスク一覧
 
                 <table class="table">
                     <thead>
@@ -188,5 +187,4 @@
         </div>
     </div>
 </div>
-
 </html>
