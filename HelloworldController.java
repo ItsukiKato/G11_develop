@@ -23,13 +23,14 @@ public class HelloworldController {
 	ArrayList<Integer> days = new ArrayList<>();
 	ArrayList<Data1> datas = new ArrayList<>();
 	Map<Integer,String> out = new HashMap<>();
+	ArrayList<Data1> sortedlist = new ArrayList<>();
 	
-  @GetMapping(value = {"/before_conect_java"})
+  @GetMapping(value = {"/post_message"})
   private String postMessage(){
-    return "before_conect_java";
+    return "post_message";
   }
 
-  @PostMapping(value = {"/before_conect_java"})
+  @PostMapping("/result")
   private String confirmMessage(@RequestParam(name = "mess", required = false, defaultValue = "テスト")String mess, 
 		  @RequestParam(name = "year", required = false, defaultValue = "2022")String year, 
 		  @RequestParam(name = "month", required = false, defaultValue = "12")String month, 
@@ -62,21 +63,22 @@ public class HelloworldController {
      QuickSort.quick_sort(tem, 0, (datas.size() - 1));
      
      for(int i = 0; i < tem.length; i++) {
-    	 String temstr = out.get(weight);
+    	 String temstr = out.get(tem[i]);
     	 for(Data1 d : datas) {
     		 if(d.getName() == temstr) {
-    			 names.add(d.getName());
-    			 days.add(d.getEndDay());
-    			 months.add(d.getEndMonth());
-    			 years.add(d.getEndYear());
+    			 sortedlist.add(d);
     		 }
     	 }
      }
      
-     Lists list = new Lists(names, years, months, days);
-     model.addAttribute("sn", list);
-     
-    //model.addAttribute("mess1", mess);
-    return "before_conect_java";
+    model.addAttribute("mess1", mess);
+    return "/post_message.html";
+  }
+  
+  @PostMapping("/result2")
+  private String result(Model model) {
+	  model.addAttribute("demo", sortedlist.get(0).getName());
+	  model.addAttribute("sn", sortedlist);
+	  return "/confirm_message.html";
   }
 }
