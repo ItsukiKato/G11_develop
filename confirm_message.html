@@ -52,18 +52,18 @@
 
             <div class="col-md-3">
                 <p><br>ソートされたタスク一覧</p>
-
+                
+                [[${demo}]]
                 <table class="table">
-                    <table border="1">
-                        <th:block th:each="link : ${sn.getLinks()}">
+                       <th:block th:each="link:${sn}">
                             <tr>
-                                <td>[[${link.getName()}]]</td>
-                                <td>[[${link.getYear()}]]</td>
-                                <td>[[${link.getMonth()}]]</td>
-                                <td>[[${link.getDay()}]]</td>
+                                <td>[[${link.name}]]</td>
+                                <td>[[${link.end_year}]]</td>
+                                <td>[[${link.end_month}]]</td>
+                                <td>[[${link.end_day}]]</td>
                             </tr>
-                        </th:block>
-                    </table>
+                        </th:block> 
+                </table>
             </div>
         </div>
     </div>
