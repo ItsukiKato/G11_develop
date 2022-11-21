@@ -8,7 +8,7 @@
 
 <html xmlns:th="http:www.thymeleaf.org">
 <meta charset="UTF-8">
-<form th:action="@{/before_conect_java}" method="post">
+
     <div class="text-center">
         <div class="container">
             <div class="row o-3column">
@@ -26,6 +26,7 @@
 
                     <h5>タスクの種類と名前</h5>
                     <div class="input-group mb-3">
+                        <form th:action="/before_conect_java" method="post">
                         <select id="task" name="task">
                             <option value="課題" selected>課題</option>
                             <option value="家事">家事</option>
@@ -36,6 +37,7 @@
                         <input type="text" class="form-control" placeholder="タスク名" name="mess">
 
                         <input type="text" class="form-control" placeholder="タスク数" name="num">
+                    </form>
 
                     </div>
 
@@ -48,14 +50,17 @@
                             </p>
                         </h5>
                         <span>
+                            <form th:action="/before_conect_java" method="post">
                             <select id="year" name="year">
                                 <option value="2022" selected>2022</option>
                                 <option value="2023">2023</option>
                                 <option value="2024">2024</option>
                             </select>
                             <label for="year">年</label>
+                        </form>
                         </span>
                         <span>
+                            <form th:action="/before_conect_java" method="post">
                             <select id="month" name="month">
                                 <option value="1" selected>1</option>
                                 <option value="2">2</option>
@@ -73,6 +78,7 @@
                             <label for="month">月</label>
                         </span>
                         <span>
+                            <form th:action="/before_conect_java" method="post">
                             <select id="day" name="day">
                                 <option value="1" selected>1</option>
                                 <option value="2">2</option>
@@ -107,6 +113,7 @@
                                 <option value="31">31</option>
                             </select>
                             <label for="day">日</label>
+                        </form>
                         </span>
                     </div>
 
