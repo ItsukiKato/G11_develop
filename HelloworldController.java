@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 @Controller
 public class HelloworldController {
@@ -23,13 +24,16 @@ public class HelloworldController {
 	ArrayList<Data1> datas = new ArrayList<>();
 	Map<Integer,String> out = new HashMap<>();
 	
-  @GetMapping("/before_conect_java")
+  @GetMapping(value = "/before_conect_java")
   private String postMessage(){
     return "before_conect_java";
   }
 
   @PostMapping(value = "/before_conect_java")
-  private String confirmMessage(@RequestParam(name = "mess")String mess, @RequestParam(name = "year")String year, @RequestParam(name = "month")String month, @RequestParam(name = "day")String day, Model model){
+  private String confirmMessage(@RequestParam(name = "mess", required = false, defaultValue = "テスト")String mess, 
+		  @RequestParam(name = "year", required = false, defaultValue = "2022")String year, 
+		  @RequestParam(name = "month", required = false, defaultValue = "12")String month, 
+		  @RequestParam(name = "day", required = false, defaultValue = "24")String day, Model model){
 	 //names.add(mess);
 	 int nyear = Integer.parseInt(year);
 	 //years.add(nyear);
