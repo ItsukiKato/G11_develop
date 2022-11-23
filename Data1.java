@@ -1,14 +1,16 @@
 package com.example.demo;
 
 public class Data1 {
-    private String name;
-    private int end_day;
-    private int end_month;
-    private int end_year;
+	private String task;
+    public String name;
+    public int end_day;
+    public int end_month;
+    public int end_year;
     private int weight;
 
     // コンストラクタ
-    Data1(String name, int end_day, int end_month, int end_year, int weight) {
+    Data1(String task, String name, int end_day, int end_month, int end_year, int weight) {
+    	this.task = task;
         this.name = name;
         this.end_day = end_day;
         this.end_month = end_month;
@@ -17,27 +19,35 @@ public class Data1 {
     }
 
     // ゲッター
-    String getName() {
+    public String getTask() {
+        return task;
+    }
+    
+    public String getName() {
         return name;
     }
 
-    String getEndDay() {
+    public String getEndDay() {
         return Integer.valueOf(end_day).toString();
     }
 
-    String getEndMonth() {
+    public String getEndMonth() {
         return Integer.valueOf(end_month).toString();
     }
 
-    String getEndYear() {
+    public String getEndYear() {
         return Integer.valueOf(end_year).toString();
     }
-
-    int getWeight() {
+    
+    public int getWeight() {
         return weight;
     }
 
     // セッター
+    void setTask(String task) {
+    	this.task = task;
+    }
+    
     void setName(String name) {
         this.name = name;
     }
