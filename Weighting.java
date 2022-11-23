@@ -81,7 +81,6 @@ public class Weighting {
 
         return y = a + b + c + d + e;
 
-        // 日付デバック return b;
     }
 
 }
