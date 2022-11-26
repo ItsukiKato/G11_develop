@@ -17,7 +17,8 @@
             </div>
 
             <div class="col-md-3">
-                <p><br>追加されたタスク一覧</p>
+            <div class="p-3 mb-2 bg-primary text-white"><p><br>追加されたタスク一覧</p></div>
+                
 
                 <table class="table">
                     <thead>
@@ -51,16 +52,17 @@
             </div>
 
             <div class="col-md-3">
-                <p><br>ソートされたタスク一覧</p>
+            <div class="p-3 mb-2 bg-primary text-white"><p><br>ソートされたタスク一覧</p></div>
                 
+                
+                [[${demo}]]
                 <table class="table">
                        <th:block th:each="link:${sn}">
                             <tr>
-                            	<td>[[${link.getTask()}]]</td>
-                                <td>[[${link.getName()}]]</td>
-                                <td>[[${link.getEndYear()}]]</td>
-                                <td>[[${link.getEndMonth()}]]</td>
-                                <td>[[${link.getEndDay()}]]</td>
+                                <td>[[${link.name}]]</td>
+                                <td>[[${link.end_year}]]</td>
+                                <td>[[${link.end_month}]]</td>
+                                <td>[[${link.end_day}]]</td>
                             </tr>
                         </th:block> 
                 </table>
